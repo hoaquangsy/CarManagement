@@ -6,8 +6,7 @@ import com.example.demo.component.superCar.EngineSuperCar;
 import com.example.demo.component.superCar.WheelSuperCar;
 import com.example.demo.component.useCar.EngineUseCar;
 import com.example.demo.component.useCar.WheelUseCar;
-import com.example.demo.domain.SuperCar;
-import com.example.demo.domain.UseCar;
+import com.example.demo.domain.Car;
 import com.example.demo.interfaces.IEngine;
 import com.example.demo.interfaces.IWheel;
 
@@ -16,19 +15,14 @@ public class DependencyInjectionApplication {
 	
 	
 	public static void main(String[] args) {
-//		SpringApplication.run(DependencyInjectionApplication.class, args);
 		IWheel wheelsc= new WheelSuperCar() ;
 		IEngine enginesc= new EngineSuperCar();
-		SuperCar superCar=new SuperCar(enginesc, wheelsc);
-		superCar.runNable();
-		superCar.getCarInfo();
-		System.out.println("----------");
+		Car carSuperCar=new Car(enginesc, wheelsc);
 		IWheel wheeluc= new WheelUseCar() ;
 		IEngine engineuc= new EngineUseCar();
-		UseCar useCar= new UseCar(engineuc, wheeluc);
-		useCar.runNable();
-		useCar.getCarInfo();
-		
+		Car carUseCard= new Car(engineuc, wheeluc);
+		System.out.println(carSuperCar.toString());
+		System.out.println(carUseCard.toString());
 	}
 
 }

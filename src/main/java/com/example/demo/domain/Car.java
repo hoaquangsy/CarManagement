@@ -4,13 +4,23 @@ import com.example.demo.interfaces.IEngine;
 import com.example.demo.interfaces.IWheel;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
 @AllArgsConstructor
-@NoArgsConstructor
-abstract class Car {
+
+public class Car {
 IEngine iEngine;
 IWheel iWheel;
 
-public abstract void getCarInfo();
+@Override
+public String toString() {
+	return "Car [iEngine=" + iEngine.toString() + ", iWheel=" + iWheel.toString() + "]";
 }
+
+
+}
+
